@@ -1,5 +1,0 @@
-33:Димасик:male:17:21313
-2:Danay:female:17:2000
-4:Capy:female:17:2000
-100:name:sex:31:31
-31:CAPY:CAPY:17:21313

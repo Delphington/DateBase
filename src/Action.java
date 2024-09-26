@@ -8,4 +8,6 @@ public interface Action {
     public void DELETE(String s);
 
     public void UPDATE(String s);
+
+    public void CREATE_FILE(String filename);
 }

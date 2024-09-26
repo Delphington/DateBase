@@ -1,5 +1,4 @@
 import java.io.PrintStream;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -32,8 +31,6 @@ public class Main {
             if (!SrvInputValid.input(scan, System.out)) {
                 break;
             }
-            // System.out.println(Arrays.toString(str));
-
 
         }
     }

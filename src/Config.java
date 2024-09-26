@@ -3,7 +3,6 @@ public class Config {
     }
 
 
-
     public final static String INFO_DATABASE = "#### DateBase Client ####\n" +
             "===============================\n" +
             "| id | name | sex | age | AOV | \n"
@@ -37,7 +36,6 @@ public class Config {
 
 
     public final static String INPUT_MESSAGE = "Введите действие: ";
-    //public final static String INPUT_MESSAGE ="Введите действие: ";
     public final static String WARING_MESSAGE = "Синтаксическая ошибка ввода: ";
 
 

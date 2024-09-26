@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SrvFile implements Action, SrvSetting {
+public class SrvFile implements Action {
     private int id;
     private String body;
 
