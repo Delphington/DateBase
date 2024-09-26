@@ -16,6 +16,7 @@ public class SrvFile implements Action, SrvSetting {
             while ((line = reader.readLine()) != null) {
                 String[] temp = line.split(":");
                 StringBuilder sb = new StringBuilder();
+                //собираем данные в строку, разделяя :
                 for (int i = 1; i < temp.length; i++) {
                     sb.append(temp[i]);
                     if (temp.length - 1 != i) {
@@ -23,7 +24,6 @@ public class SrvFile implements Action, SrvSetting {
                     }
                 }
                 ourDate.put(Integer.parseInt(temp[0]), sb.toString());
-                // System.out.println(line);
             }
         } catch (IOException e) {
             System.err.println("Ошибка при чтении файла: " + e.getMessage());
@@ -38,37 +38,29 @@ public class SrvFile implements Action, SrvSetting {
             for (Map.Entry<Integer, String> entry : ourDate.entrySet()) {
                 writer.write(entry.getKey() + ":" + entry.getValue() + "\n");
             }
-            writer.close(); // Не забудьте закрыть файл
+            writer.close(); //  закрыть файл
             System.out.println("Информация записана в файл.");
         } catch (IOException e) {
             System.err.println("Ошибка при записи в файл: " + e.getMessage());
         }
     }
 
+    //Создание нового файла и запись туда всей информации
     private static void createNewFileAndSave(String fileName) {
-
-
-        // Данные для записи
-        String data = "Hello, World!\nThis is a sample text.";
-
-        // Создаем файл и записываем данные
         try {
-            // Создаем объект File
             File file = new File(fileName);
 
             // Если файл не существует, создаем его
             if (!file.exists()) {
                 file.createNewFile();
             }
-
-            // Используем FileWriter и BufferedWriter для записи в файл
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
                 for (Map.Entry<Integer, String> entry : ourDate.entrySet()) {
                     writer.write(entry.getKey() + ":" + entry.getValue() + "\n");
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Не удалось создать файл" + e.getMessage());
         }
     }
 
@@ -120,7 +112,7 @@ public class SrvFile implements Action, SrvSetting {
         if (ourDate.get(id) == null) {
             System.out.println("Error: такого элемента нет");
         } else {
-            System.out.println("GET DATe: " + ourDate.get(id));
+            System.out.println("GET DATE: " + ourDate.get(id));
         }
     }
 
@@ -149,7 +141,7 @@ public class SrvFile implements Action, SrvSetting {
     @Override
     public void CREATE_FILE(String filename) {
         Config.FILE_PATH = "src/" + filename + ".txt";
-        System.out.println(Config.FILE_PATH);
+        //System.out.println(Config.FILE_PATH);
         createNewFileAndSave(Config.FILE_PATH);
     }
 }

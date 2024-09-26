@@ -12,9 +12,11 @@ public class Main {
 //Выбрать существующий или создать новый
 
     public static void printInfo(PrintStream printStream) {
-        printStream.print(Config.INFO_MESSAGE_DATABASE); //Информация о бд
-        printStream.println(Config.CORRECT_MESSAGE);
-        printStream.println(Config.SYNTAX_MESSAGE);
+        printStream.print(Config.INFO_DATABASE); //Информация о бд
+        printStream.println(Config.TYPE_VALUE_DATABASE); //виды и колонки
+        printStream.println(Config.RULE_COMMAND);
+
+        printStream.println(Config.SYNTAX_DATABASE);
     }
 
 
